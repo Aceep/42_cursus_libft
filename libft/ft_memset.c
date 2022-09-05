@@ -10,6 +10,5 @@ void	*ft_memset(void *str, int c, size_t n)
 		((char *)str)[i] = (unsigned char)c;
 		i ++;
 	}
-	((char *)str)[i] = '\0';
 	return (str);
 }
