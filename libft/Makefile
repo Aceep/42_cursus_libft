@@ -6,6 +6,8 @@ SRCS = ft_strlen.c \
        ft_strcmp.c \
        ft_bzero.c \
        ft_memcpy.c \
+       ft_tolower.c \
+       ft_toupper.c \
        ft_touppercase.c \
        ft_tolowercase.c \
        ft_putstr.c \
@@ -32,3 +34,7 @@ fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
+
+so :
+	$(GCC) -nostartfiles -fPIC $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)

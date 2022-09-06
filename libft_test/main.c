@@ -1,6 +1,4 @@
-#include "libft.h"
-#include <ctype.h>
-#include <stdio.h>
+#include "test_libft.h"
 
 void	test_redirection(char *str);
 

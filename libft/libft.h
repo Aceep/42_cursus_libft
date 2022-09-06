@@ -16,5 +16,7 @@ void	*ft_memset(void *str, int c, size_t n);
 int     ft_strcmp(const char *s1, const char *s2);
 void	ft_bzero(void *str, size_t n);
 void 	*ft_memcpy(void *dest, const void *src, size_t n);
+int	ft_tolower(int c);
+int	ft_toupper(int c);
 
 #endif

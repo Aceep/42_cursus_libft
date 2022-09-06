@@ -1,4 +1,4 @@
-#include "libft.h"
+#include "test_libft.h"
 
 void    test_putstr(char *str)
 {
@@ -12,7 +12,7 @@ void	test_strlen(char *str)
 	ft_putnb(ft_strlen(str));
 	write(1, "\n", 1);
 	if (strlen(str) == ft_strlen(str))
-		ft_putstr("Success of strlen");
+		ft_putstr("\033[ERROR_COLORmSuccess of strlen\033[00m");
 	else
 		ft_putstr("Fail");
 }
@@ -49,14 +49,11 @@ void	test_bzero(char *str)
 	cpy = ft_strdup(str);
 	ft_putstr(cpy);
 	bzero(cpy, ft_strlen(cpy));
-	ft_putstr(cpy);
 	ft_bzero(str, 4);
 	if (ft_strcmp(cpy, str) == 0)
 		ft_putstr("Sucess of bzero");
 	else
 		ft_putstr("Fail");
-	ft_putstr(cpy);
-	ft_putstr(str);
 }
 
 void	test_redirection(char *str)
