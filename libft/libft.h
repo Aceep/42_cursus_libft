@@ -28,5 +28,9 @@ char	*ft_strstr(const char *str, const char *tofind);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *tofind, size_t n);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
+void	*ft_calloc(size_t nitems, size_t size);
+int	ft_isspace(const char *str);
+size_t  ft_strlcpy(char *dst, const char *src, size_t size);
+void    *ft_malloc( size_t nitems, size_t size);
 
 #endif

@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdlib.h>
 
 int	ft_atoi(const char *str)
 {
@@ -9,13 +8,7 @@ int	ft_atoi(const char *str)
 
 	nb = 0;
 	sign = 1;
-	i = 0; 
-	while (str[i] == 32 || str[i] == '\f'
-		|| str[i] ==  '\n' 
-		|| str[i] == '\r'
-		|| str[i] == '\t'
-		|| str[i] == '\v')
-		i ++;
+	i = ft_isspace(str);
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
@@ -29,18 +22,3 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * nb);
 }
-/*
-int	main(int ac, char **av)
-{
-	while (ac > 1)
-	{
-		ft_putnb(ft_atoi(av[ac - 1]));
-		write(1, "\n", 1);
-		ft_putnb(atoi(av[ac - 1]));
-
-		write(1, "\n", 1);
-		ac --;
-	}
-	return (0);
-}
-*/

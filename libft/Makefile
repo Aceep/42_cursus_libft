@@ -11,9 +11,13 @@ SRCS = ft_strlen.c \
        ft_isdigit.c \
        ft_isalpha.c \
        ft_atoi.c \
+       ft_strlcpy.c \
        ft_strstr.c \
        ft_strlcat.c \
+       ft_isspace.c \
+       ft_calloc.c \
        ft_strnstr.c \
+       ft_malloc.c \
        ft_strncmp.c \
        ft_isalnum.c \
        ft_toupper.c \
