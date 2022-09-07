@@ -24,8 +24,9 @@ int	ft_isalnum(int c);
 int	ft_isdigit(int c);
 int	ft_isalpha(int c);
 int	ft_atoi(const char * c);
-char	*ft_strstr(char *str, char *tofind);
-int	ft_strncmp(char *s1, char *s2, size_t n);
-char	*ft_strnstr(char *str, char *tofind, int n);
+char	*ft_strstr(const char *str, const char *tofind);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strnstr(const char *str, const char *tofind, size_t n);
+size_t	ft_strlcat(char *dest, const char *src, size_t size);
 
 #endif

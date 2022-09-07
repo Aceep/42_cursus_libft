@@ -1,6 +1,6 @@
 #include "libft.h"
 
-char	*ft_strstr(char *str, char *tofind)
+char	*ft_strstr(const char *str, const char *tofind)
 {
         int     i;
 
@@ -10,7 +10,7 @@ char	*ft_strstr(char *str, char *tofind)
 	while (str[i])
         {
                 if (ft_strncmp(&str[i], tofind, ft_strlen(tofind)) == 0)
-                	return (&str[i]);
+                	return ((char *)(str + i));
 		i ++;
 	}
 	return (0);

@@ -12,6 +12,7 @@ SRCS = ft_strlen.c \
        ft_isalpha.c \
        ft_atoi.c \
        ft_strstr.c \
+       ft_strlcat.c \
        ft_strnstr.c \
        ft_strncmp.c \
        ft_isalnum.c \
