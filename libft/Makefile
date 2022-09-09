@@ -20,9 +20,13 @@ SRCS = ft_strlen.c \
        ft_memccpy.c \
        ft_memcmp.c \
        ft_memmove.c \
+       ft_memchr.c \
        ft_calloc.c \
        ft_strnstr.c \
-       ft_malloc.c \
+       ft_memalloc.c \
+       ft_substr.c \
+       ft_strjoin.c \
+       ft_strtrim.c \
        ft_strncmp.c \
        ft_isalnum.c \
        ft_toupper.c \
@@ -43,7 +47,7 @@ RM = rm -rf
 $(NAME) : $(OBJS)
 	$(GCC) -c $(SRCS)
 	ar rcs $(NAME) $(OBJS)
-	
+
 all : $(NAME)
 
 clean : 
