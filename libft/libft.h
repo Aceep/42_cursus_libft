@@ -10,7 +10,7 @@ size_t	ft_strlen(const char *str);
 char	*ft_touppercase(char *str);
 char	*ft_tolowercase(char *str);
 void	ft_putstr(char *str);
-void	ft_putnb(unsigned int len);
+void	ft_putnbr(int len);
 char	*ft_strdup(const char *str);
 void	*ft_memset(void *str, int c, size_t n);
 int     ft_strcmp(const char *s1, const char *s2);
@@ -41,5 +41,11 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_substr(const char *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putchar(wchar_t c);
+void	putwchart(int wchar, int *len, char *buff);
+void	ft_putnbr_fd(int n, int fd);
 
 #endif

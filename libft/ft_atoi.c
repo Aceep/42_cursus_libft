@@ -4,7 +4,7 @@ int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
-	long long int	nb;
+	unsigned long long int	nb;
 
 	nb = 0;
 	sign = 1;
@@ -22,3 +22,15 @@ int	ft_atoi(const char *str)
 	}
 	return (sign * nb);
 }
+/*
+int	main(int ac, char **av)
+{
+	(void)ac;
+	if (av[1])
+	{
+		ft_putnb(atoi(av[1]));
+		ft_putchar('\n');
+		ft_putnb(ft_atoi(av[1]));
+	}
+	return (0);
+}*/

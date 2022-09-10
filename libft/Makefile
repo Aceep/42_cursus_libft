@@ -20,21 +20,27 @@ SRCS = ft_strlen.c \
        ft_memccpy.c \
        ft_memcmp.c \
        ft_memmove.c \
+       ft_putwchar.c \
+       ft_putnbr_fd.c \
        ft_memchr.c \
        ft_calloc.c \
        ft_strnstr.c \
        ft_memalloc.c \
        ft_substr.c \
        ft_strjoin.c \
-       ft_strtrim.c \
        ft_strncmp.c \
+       ft_strtrim.c \
+       ft_putchar_fd.c \
+       ft_putstr_fd.c \
+       ft_putendl_fd.c \
+       ft_putchar.c \
        ft_isalnum.c \
        ft_toupper.c \
        ft_isprint.c \
        ft_touppercase.c \
        ft_tolowercase.c \
        ft_putstr.c \
-       ft_putnb.c \
+       ft_putnbr.c \
 
 OBJS = $(SRCS:.c=.o)
 
