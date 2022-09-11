@@ -41,6 +41,9 @@ SRCS = ft_strlen.c \
        ft_tolowercase.c \
        ft_putstr.c \
        ft_putnbr.c \
+       ft_strmapi.c \
+       ft_nbrlen.c \
+       ft_itoa.c \
 
 OBJS = $(SRCS:.c=.o)
 

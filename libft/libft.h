@@ -47,5 +47,8 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putchar(wchar_t c);
 void	putwchart(int wchar, int *len, char *buff);
 void	ft_putnbr_fd(int n, int fd);
+char	*ft_sstrmapi(char const *s, char (*f)(unsigned int, char));
+char	*ft_itoa(int n);
+int	ft_nbrlen(int n);
 
 #endif
