@@ -1,6 +1,7 @@
 NAME = libft.a
 
 SRCS = ft_strlen.c \
+       ft_split.c \
        ft_strdup.c \
        ft_memset.c \
        ft_strcmp.c \
@@ -16,7 +17,7 @@ SRCS = ft_strlen.c \
        ft_strlcat.c \
        ft_strchr.c \
        ft_strrchr.c \
-       ft_isspace.c \
+       ft_isblank.c \
        ft_memccpy.c \
        ft_memcmp.c \
        ft_memmove.c \

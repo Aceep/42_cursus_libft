@@ -8,7 +8,13 @@ int	ft_atoi(const char *str)
 
 	nb = 0;
 	sign = 1;
-	i = ft_isspace(str);
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t'
+		|| str[i] == '\n'
+		|| str[i] == '\f'
+		|| str[i] == '\r'
+		|| str[i] == '\v')
+		i ++;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')

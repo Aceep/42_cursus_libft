@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	ft_isspace(const char *str)
+int	ft_isblanck(const char *str)
 {		
 	int	i;
 

@@ -29,7 +29,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strnstr(const char *str, const char *tofind, size_t n);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 void	*ft_calloc(size_t nitems, size_t size);
-int	ft_isspace(const char *str);
+int	ft_isblank(const char *str);
 size_t  ft_strlcpy(char *dst, const char *src, size_t size);
 void    *ft_memalloc(size_t size);
 char	*ft_strchr(const char *s, int c);
@@ -50,5 +50,6 @@ void	ft_putnbr_fd(int n, int fd);
 char	*ft_sstrmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);
 int	ft_nbrlen(int n);
+char	**ft_split(char const *s, char c);
 
 #endif

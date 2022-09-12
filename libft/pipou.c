@@ -1,5 +1,29 @@
 #include "libft.h"
 
+void	print_heart(int nb_pipou, int nb_poupi)
+{
+
+}
+
+void	count_pipou(char const *str)
+{
+	int	nb_pipou = 0;
+	int	i = 5;
+
+	while (str)
+	{
+		if (ft_strstr(str, pipou) != 0)
+		{
+			nb_pipou ++;
+			str = ft_strstr(str, pipou);
+			str += i;
+		}
+		str ++;
+	}
+	return (nb_pipou);
+
+}
+
 int	main(int ac, char **av)
 {
 	(void)ac;
