@@ -4,7 +4,6 @@ SRCS = ft_strlen.c \
        ft_split.c \
        ft_strdup.c \
        ft_memset.c \
-       ft_strcmp.c \
        ft_bzero.c \
        ft_memcpy.c \
        ft_tolower.c \
@@ -13,7 +12,6 @@ SRCS = ft_strlen.c \
        ft_isalpha.c \
        ft_atoi.c \
        ft_strlcpy.c \
-       ft_strstr.c \
        ft_strlcat.c \
        ft_strchr.c \
        ft_strrchr.c \
@@ -21,12 +19,10 @@ SRCS = ft_strlen.c \
        ft_memccpy.c \
        ft_memcmp.c \
        ft_memmove.c \
-       ft_putwchar.c \
        ft_putnbr_fd.c \
        ft_memchr.c \
        ft_calloc.c \
        ft_strnstr.c \
-       ft_memalloc.c \
        ft_substr.c \
        ft_strjoin.c \
        ft_strncmp.c \
@@ -34,19 +30,26 @@ SRCS = ft_strlen.c \
        ft_putchar_fd.c \
        ft_putstr_fd.c \
        ft_putendl_fd.c \
-       ft_putchar.c \
        ft_isalnum.c \
        ft_toupper.c \
        ft_isprint.c \
-       ft_touppercase.c \
-       ft_tolowercase.c \
-       ft_putstr.c \
-       ft_putnbr.c \
        ft_strmapi.c \
-       ft_nbrlen.c \
        ft_itoa.c \
 
+SRCS_BONUS = ft_memalloc.c \
+	     ft_strstr.c \
+	     ft_putchar.c \
+	     ft_putstr.c \
+	     ft_putnbr.c \
+	     ft_strcmp.c \
+	     ft_nbrlen.c \
+	     ft_touppercase.c \
+	     ft_tolowercase.c \
+	     ft_putwchar.c \
+
 OBJS = $(SRCS:.c=.o)
+
+BONUS_OBJS = $(SRCS_BONUS:.c=.o)
 
 HEADER = libft.h \
 
@@ -54,20 +57,23 @@ GCC = gcc -Wall -Wextra -Werror
 
 RM = rm -rf
 
-$(NAME) : $(OBJS)
-	$(GCC) -c $(SRCS)
-	ar rcs $(NAME) $(OBJS)
+$(NAME) : 
+	$(GCC) -c $(SRCS) $(SRCS_BONUS)
+	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
 all : $(NAME)
 
 clean : 
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean : clean
 	$(RM) $(NAME)
 
 re : fclean all
 
+bonus : all
+	$(GCC) -c $(SRCS_BONUS)
+	ar rcs $(NAME) $(BONUS_OBJS)
 so :
-	$(GCC) -nostartfiles -fPIC $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
+	$(GCC) -nostartfiles -fPIC $(SRCS) $(SRCS_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)

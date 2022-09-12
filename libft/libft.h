@@ -6,6 +6,12 @@
 # include <stdlib.h>
 # include <strings.h>
 
+typedef struct s_list
+{
+	void *content;
+	struct s_list *next;
+} t_list;
+
 size_t	ft_strlen(const char *str);
 char	*ft_touppercase(char *str);
 char	*ft_tolowercase(char *str);

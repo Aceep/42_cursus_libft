@@ -20,44 +20,38 @@ char	**ft_split(char const *s, char c)
 {
 	int	nb_line;
 	char	**str;
-	int	j; //parcours les lignes
-	int	i; //parcours la chaine si
-	int	end_w;
+	int	j; 
+	int	i;
 
-	nb_line = ft_nb_line(s, c);
-	if (!(str = (char **)malloc(sizeof(char *) * (nb_line))))
+	if (!s) 
 		return (NULL);
-	nb_line = 0;
+	nb_line = ft_nb_line(s, c);
+	if (!(str = (char **)malloc(sizeof(char *) * (nb_line + 1))))
+		return (NULL);
 	i = 0;
-	end_w = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] == c)
+		if (*s == c)
+			s ++;
+		else 
 		{
-			if (!(str[nb_line] = (char *)malloc(sizeof(char) * ((i - end_w) + 1))))
-				return (NULL);
-			while (s[i] == c && s[i + 1] == c)
-                        	i ++;
-			while (end_w < i && s[end_w] != c)
-			{
-				str[nb_line][j] = s[end_w];
-				j ++;
-			}
-			str[nb_line][j] = '\0';
 			j = 0;
-			end_w = i;
-			nb_line ++;
-			ft_putstr(str[nb_line]);
+			while (*(s + j) != '\0' && *(s + j) != c)
+				j ++;
+			if ( i < nb_line)
+				str[i++] = ft_substr(s, 0, j);
+			s += j;
 		}
-		i ++;
 	}
+	str[i] = 0;
 	return (str);
 }
-
+/*
 int	main(void)
 {
 	char	c = '#';
 	char const *s = "Je suis#le###pire test#de tous les####  temps";
-       ft_split(s, c);
+
+	ft_split(s, c);
 	return (0);
-}	
+}	*/
