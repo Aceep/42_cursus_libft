@@ -36,17 +36,7 @@ SRCS = ft_strlen.c \
        ft_strmapi.c \
        ft_itoa.c \
 
-SRCS_BONUS = ft_memalloc.c \
-	     ft_strstr.c \
-	     ft_putchar.c \
-	     ft_putstr.c \
-	     ft_putnbr.c \
-	     ft_strcmp.c \
-	     ft_nbrlen.c \
-	     ft_touppercase.c \
-	     ft_tolowercase.c \
-	     ft_putwchar.c \
-	     ft_lstnew.c \
+SRCS_BONUS = ft_lstnew.c \
 	     ft_lstadd_front.c \
 	     ft_lstsize.c \
 	     ft_lstlast.c\
