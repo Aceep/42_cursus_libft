@@ -1,17 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 13:33:39 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/09 13:57:04 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_putchar(wchar_t c)
+void	ft_putchar(char c)
 {
-	if ((unsigned int)c > 128)
-	{
-		char	buff[10];
-		int	len;
-
-		len = 0;	
-		putwchart(c, &len, buff);
-		buff[len] = '\0';
-		write(1, buff, ft_strlen(buff));
-	}
-	else
-		write(1, &c, 1);
+	write(1, &c, 1);
 }

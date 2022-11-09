@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_isblank.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 11:55:59 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/09 14:01:10 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/09 11:42:29 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/09 13:56:15 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *str)
-{
-	int		len;
-	char	*cpy;
-	int		i;
+int	ft_isblanck(const char *str)
+{		
+	int	i;
 
 	i = 0;
-	len = ft_strlen(str);
-	cpy = (char *)malloc((len + 1) * sizeof(char));
-	if (cpy == NULL)
-		return (NULL);
-	while (str[i])
-	{
-		cpy[i] = str[i];
+	while (str[i] == 32 || str[i] == '\f'
+		|| str[i] == '\n'
+		|| str[i] == '\r'
+		|| str[i] == '\t'
+		|| str[i] == '\v')
 		i ++;
-	}
-	cpy[i] = '\0';
-	return (cpy);
+	return (i);
 }

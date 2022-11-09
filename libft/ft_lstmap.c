@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 11:47:22 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/09 14:27:02 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *),
@@ -7,13 +19,15 @@ void (*del)(void *))
 	t_list	*pos_new;
 	t_list	*pos_old;
 
-	if (!lst || !(new_list = ft_lstnew((*f)(lst->content))))
+	new_list = ft_lstnew((*f)(lst->content));
+	if (!lst || !(new_list))
 		return (NULL);
 	pos_new = new_list;
 	pos_old = lst->next;
 	while (pos_old)
 	{
-		if (!(pos_new->next = ft_lstnew((*f)(lst->content))))
+		new_list = ft_lstnew((*f)(lst->content));
+		if (!(pos_new->next = new_list))
 		{
 			ft_lstdelone(new_list, del);
 			return (NULL);

@@ -1,16 +1,28 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 13:34:40 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/09 13:50:12 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strstr(const char *str, const char *tofind)
 {
-        int     i;
+	int	i;
 
-        i = 0;
-        if (!str[i] && !tofind[i])
+	i = 0;
+	if (!str[i] && !tofind[i])
 		return ((char *)str);
 	while (str[i])
-        {
-                if (ft_strncmp(&str[i], tofind, ft_strlen(tofind)) == 0)
-                	return ((char *)(str + i));
+	{
+		if (ft_strncmp(&str[i], tofind, ft_strlen(tofind)) == 0)
+			return ((char *)(str + i));
 		i ++;
 	}
 	return (0);

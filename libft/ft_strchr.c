@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/09 11:55:48 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/09 14:36:18 by alycgaut         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
@@ -10,5 +22,4 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == (char)c)
 		return (&((char *)s)[i]);
 	return (NULL);
-
 }
