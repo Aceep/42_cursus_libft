@@ -6,7 +6,7 @@
 /*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 12:03:27 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/09 12:14:17 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:55:27 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,7 @@ char	*ft_strtrim(char const *s1, char const *set);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putchar(wchar_t c);
-void	putwchart(int wchar, int *len, char *buff);
+void	ft_putchar(char c);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_sstrmapi(char const *s, char (*f)(unsigned int, char));
 char	*ft_itoa(int n);

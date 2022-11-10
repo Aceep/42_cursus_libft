@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:47:22 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/09 14:27:02 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/11/10 14:46:38 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void (*del)(void *))
 	pos_old = lst->next;
 	while (pos_old)
 	{
-		new_list = ft_lstnew((*f)(lst->content));
-		if (!(pos_new->next = new_list))
+		pos_new->next = ft_lstnew((*f)(lst->content));
+		if (!(pos_new->next))
 		{
 			ft_lstdelone(new_list, del);
 			return (NULL);

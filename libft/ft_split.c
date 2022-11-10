@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:55:36 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/09 11:55:38 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/11/10 12:55:04 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,41 +21,49 @@ int	ft_nb_line(char const *s, char c)
 	nb_line = 0;
 	while (s[i])
 	{
-		if ( (s[i] == c && s[i + 1] != c) || s[i + 1] == '\0')
+		if ((s[i] == c && s[i + 1] != c) || s[i + 1] == '\0')
 			nb_line ++;
 		i ++;
 	}
 	return (nb_line);
 }
 
-char	**ft_split(char const *s, char c)
+void	ft_line(char **str, char const *s, int nb_line, char c)
 {
-	int	nb_line;
-	char	**str;
-	int	j; 
+	int	j;
 	int	i;
 
-	if (!s) 
-		return (NULL);
-	nb_line = ft_nb_line(s, c);
-	if (!(str = (char **)malloc(sizeof(char *) * (nb_line + 1))))
-		return (NULL);
 	i = 0;
 	while (*s)
 	{
 		if (*s == c)
 			s ++;
-		else 
+		else
 		{
 			j = 0;
 			while (*(s + j) != '\0' && *(s + j) != c)
 				j ++;
-			if ( i < nb_line)
-				str[i++] = ft_substr(s, 0, j);
+			if (i < nb_line)
+				str[i] = ft_substr(s, 0, j);
+			i ++;
 			s += j;
 		}
 	}
 	str[i] = 0;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	int		nb_line;
+	char	**str;
+
+	if (!s)
+		return (NULL);
+	nb_line = ft_nb_line(s, c);
+	str = (char **)malloc(sizeof(char *) * (nb_line + 1));
+	if (!(str))
+		return (NULL);
+	ft_line(str, s, nb_line, c);
 	return (str);
 }
 /*
@@ -66,4 +74,4 @@ int	main(void)
 
 	ft_split(s, c);
 	return (0);
-}	*/
+}*/

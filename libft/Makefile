@@ -15,7 +15,6 @@ SRCS = ft_strlen.c \
        ft_strlcat.c \
        ft_strchr.c \
        ft_strrchr.c \
-       ft_isblank.c \
        ft_memccpy.c \
        ft_memcmp.c \
        ft_memmove.c \
@@ -45,6 +44,16 @@ SRCS_BONUS = ft_lstnew.c \
 	     ft_lstclear.c \
 	     ft_lstiter.c \
 	     ft_lstmap.c \
+	     ft_putstr.c \
+	     ft_putnbr.c \
+	     ft_tolowercase.c \
+	     ft_touppercase.c \
+	     ft_nbrlen.c \
+	     ft_isblank.c \
+	     ft_memalloc.c \
+	     ft_putchar.c \
+	     ft_strcmp.c \
+	     ft_strlen.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -57,8 +66,8 @@ GCC = gcc -Wall -Wextra -Werror
 RM = rm -rf
 
 $(NAME) : 
-	$(GCC) -c $(SRCS) $(SRCS_BONUS)
-	ar rcs $(NAME) $(OBJS) $(BONUS_OBJS)
+	$(GCC) -c $(SRCS)
+	ar rcs $(NAME) $(OBJS)
 
 all : $(NAME)
 
