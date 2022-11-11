@@ -1,7 +1,6 @@
 NAME = libft.a
 
-SRCS = ft_strlen.c \
-       ft_split.c \
+SRCS = ft_split.c \
        ft_strdup.c \
        ft_memset.c \
        ft_bzero.c \
@@ -65,7 +64,7 @@ GCC = gcc -Wall -Wextra -Werror
 
 RM = rm -rf
 
-$(NAME) : 
+$(NAME) : $(OBJS) 
 	$(GCC) -c $(SRCS)
 	ar rcs $(NAME) $(OBJS)
 
@@ -79,7 +78,7 @@ fclean : clean
 
 re : fclean all
 
-bonus : all
+bonus : all $(BONUS_OBJS)
 	$(GCC) -c $(SRCS_BONUS)
 	ar rcs $(NAME) $(BONUS_OBJS)
 so :

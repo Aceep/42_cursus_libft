@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	ft_nb(int size, char *nbr, int i)
+void	ft_nb(int size, char *nbr, long long int i)
 {
 	nbr[size] = '\0';
 	while (i)
@@ -24,7 +23,7 @@ void	ft_nb(int size, char *nbr, int i)
 	}
 	if (nbr[1] != '\0' && size == 1)
 		nbr[0] = '-';
-	else if (nbr[1] == '\0' && size == 0)
+	else if (nbr[1] == '\0' && size == 1)
 		nbr[0] = '0';
 }
 
@@ -35,7 +34,7 @@ char	*ft_itoa(int n)
 	size_t			size;
 
 	i = n;
-	if (i < 0)
+	if (i <= 0)
 	{
 		i = -i;
 		size = 1;
@@ -51,13 +50,12 @@ char	*ft_itoa(int n)
 	if (!(nbr))
 		return (0);
 	ft_nb(size, nbr, i);
-	printf("%s", nbr);
 	return (nbr);
 }
 /*
 int	main(void)
 {
 	int n = -45684;
-	ft_itoa(n);
+	ft_itoavi (n);
 	return (0);
 }*/

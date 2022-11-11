@@ -19,8 +19,10 @@ void (*del)(void *))
 	t_list	*pos_new;
 	t_list	*pos_old;
 
+	if (!lst)
+		return (NULL);
 	new_list = ft_lstnew((*f)(lst->content));
-	if (!lst || !(new_list))
+	if (!(new_list))
 		return (NULL);
 	pos_new = new_list;
 	pos_old = lst->next;
