@@ -81,6 +81,3 @@ re : fclean all
 bonus : all $(BONUS_OBJS)
 	$(GCC) -c $(SRCS_BONUS)
 	ar rcs $(NAME) $(BONUS_OBJS)
-so :
-	$(GCC) -nostartfiles -fPIC $(SRCS) $(SRCS_BONUS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)
