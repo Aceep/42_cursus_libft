@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isblank.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 11:42:29 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/09 13:56:15 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/09 11:55:59 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/09 14:01:10 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isblanck(const char *str)
-{		
-	int	i;
+/*void	iter(unsigned int i, char * s) 
+{
+        *s += i;
+}*/
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+{
+	unsigned int	i;
 
 	i = 0;
-	while (str[i] == 32 || str[i] == '\f'
-		|| str[i] == '\n'
-		|| str[i] == '\r'
-		|| str[i] == '\t'
-		|| str[i] == '\v')
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		(*f)(i, s + i);
 		i ++;
-	return (i);
+	}
 }
+
+/*int	main(void)
+{
+	char	*s = "0000000000";
+
+	ft_striteri(s, iter);
+
+	return (0);
+}*/

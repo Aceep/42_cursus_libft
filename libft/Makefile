@@ -18,7 +18,9 @@ SRCS = ft_split.c \
        ft_memcmp.c \
        ft_memmove.c \
        ft_putnbr_fd.c \
+       ft_striteri.c \
        ft_memchr.c \
+       ft_strlen.c \
        ft_calloc.c \
        ft_strnstr.c \
        ft_substr.c \
@@ -48,11 +50,9 @@ SRCS_BONUS = ft_lstnew.c \
 	     ft_tolowercase.c \
 	     ft_touppercase.c \
 	     ft_nbrlen.c \
-	     ft_isblank.c \
 	     ft_memalloc.c \
 	     ft_putchar.c \
 	     ft_strcmp.c \
-	     ft_strlen.c \
 
 OBJS = $(SRCS:.c=.o)
 
@@ -81,3 +81,7 @@ re : fclean all
 bonus : all $(BONUS_OBJS)
 	$(GCC) -c $(SRCS_BONUS)
 	ar rcs $(NAME) $(BONUS_OBJS)
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS) $(SRCS_BONUS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS) $(BONUS_OBJS)

@@ -17,7 +17,10 @@ void	ft_putnbr_fd(int n, int fd)
 	char	c;
 
 	if (n == -2147483648)
+	{
 		write(fd, "-2147483648", 11);
+		return ;
+	}
 	if (n < 0)
 	{
 		n = -n;
@@ -28,3 +31,12 @@ void	ft_putnbr_fd(int n, int fd)
 	c = (n % 10) + '0';
 	write(fd, &c, 1);
 }
+/*#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+int	main(void)
+{
+	int	fd = open("int_min", O_RDWR);
+	int	n = -2147483648;
+	ft_putnbr_fd(n, fd);
+}*/

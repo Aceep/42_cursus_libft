@@ -16,8 +16,15 @@ void	*ft_calloc(size_t nitems, size_t size)
 {
 	void	*tab;
 
+	if (nitems != 0 && ((size * nitems) / nitems != size))
+		return (NULL);
 	tab = (void *)malloc(size * nitems);
 	if (!tab)
 		return (NULL);
-	return (ft_bzero(tab, size * nitems), (void *)tab);
+	return (ft_bzero(tab, size * nitems), tab);
 }
+/*
+int main(void)
+{
+	ft_calloc(SIZE_MAX, SIZE_MAX);
+}*/
