@@ -6,7 +6,7 @@
 /*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 11:55:36 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/10 12:55:04 by alycgaut         ###   ########.fr       */
+/*   Updated: 2022/11/14 15:07:09 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_nb_line(char const *s, char c)
 	nb_line = 0;
 	while (s[i])
 	{
-		if ((s[i] == c && s[i + 1] != c) || s[i + 1] == '\0')
+		if ((s[i] != c && (s[i + 1] == c || s[i + 1] == '\0')))
 			nb_line ++;
 		i ++;
 	}
@@ -66,12 +66,10 @@ char	**ft_split(char const *s, char c)
 	ft_line(str, s, nb_line, c);
 	return (str);
 }
-/*
-int	main(void)
-{
-	char	c = '#';
-	char const *s = "Je suis#le###pire test#de tous les####  temps";
 
-	ft_split(s, c);
+/*int	main(void)
+{
+	char *splitme = strdup("Tripouille ");
+   char **tab = ft_split(splitme, ' ');
 	return (0);
 }*/
