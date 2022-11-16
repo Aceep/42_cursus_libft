@@ -2,6 +2,12 @@
 # define TEST_LIBFT_H
 
 # include "../libft/libft.h"
+# include <unistd.h>
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 
-define ERROR_COLOR = 32
+void	test_redirection(void);
+void	test_bzero();
+
 #endif

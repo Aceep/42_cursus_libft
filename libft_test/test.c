@@ -1,6 +1,6 @@
 #include "test_libft.h"
 
-void    test_putstr(char *str)
+/*void    test_putstr(char *str)
 {
         ft_putstr(str);
         ft_putstr(ft_tolowercase(ft_strdup(str)));
@@ -40,27 +40,13 @@ void	test_memset(char *str)
 	
 	ft_putstr(cpy);
 	ft_putstr(str);
-}
+}*/
 
-void	test_bzero(char *str)
+void	test_redirection(void)
 {
-	char	*cpy;
-
-	cpy = ft_strdup(str);
-	ft_putstr(cpy);
-	bzero(cpy, ft_strlen(cpy));
-	ft_bzero(str, 4);
-	if (ft_strcmp(cpy, str) == 0)
-		ft_putstr("Sucess of bzero");
-	else
-		ft_putstr("Fail");
-}
-
-void	test_redirection(char *str)
-{
-	test_putstr(str);
-	test_strlen(str);
-	test_strdup(str);
-	test_memset(ft_strdup(str));
-	test_bzero(ft_strdup(str));
+	//test_putstr(str);
+	//test_strlen(str);
+	//test_strdup(str);
+	//test_memset(ft_strdup(str));
+	ft_putstr("bzero :"); test_bzero();
 }

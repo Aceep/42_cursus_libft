@@ -1,18 +1,8 @@
 #include "test_libft.h"
 
-void	test_redirection(char *str);
-
-int	main(int ac, char **av)
+int	main(void)
 {
-	int	i;
-
-	i = 1;
-	(void) ac;
 	ft_putstr("\033[34;01mBonjour\033[00m\n");
-	while (av[i])
-	{
-		test_redirection(av[i]);
-		i ++;
-	}
+	test_redirection();
 	return (0);
 }				
