@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolowercase.c                                   :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alycgaut <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: alycgaut <alycgaut@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 13:34:49 by alycgaut          #+#    #+#             */
-/*   Updated: 2022/11/09 13:34:50 by alycgaut         ###   ########.fr       */
+/*   Created: 2022/11/09 11:48:02 by alycgaut          #+#    #+#             */
+/*   Updated: 2022/11/09 14:29:11 by alycgaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_tolowercase(char *str)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	if (!lst)
+		return (0);
+	while (lst)
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
+		lst = lst->next;
 		i ++;
 	}
-	return (str);
+	return (i);
 }
