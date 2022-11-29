@@ -8,6 +8,6 @@
 # include <fcntl.h>
 
 void	test_redirection(void);
-void	test_bzero();
+void	test_bzero(void);
 
 #endif
